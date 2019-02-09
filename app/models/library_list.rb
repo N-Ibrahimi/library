@@ -1,0 +1,2 @@
+class LibraryList < ApplicationRecord
+end
