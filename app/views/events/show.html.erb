@@ -1,0 +1,13 @@
+
+<div class="container">
+<h1 class="text-center mt-4"> Eevent</h1>      
+<div class="jumbotron">
+  <h4 class="display-8 col-4 "><span   >Title:</span><span class="col-8"><%= @event.title%></span></h4>
+  <a class="btn btn-primary btn-lg" href="#" role="button" style="display: inline-block">inscription</a>
+  <h5 class="display-8 col-4 "><span   >Date:</span><span class="text-danger col-8"><%= @event.date%></span></h5>
+  <h5 class="display-8 col-4 "><span   >City: </span><span class="col-8"><%= @event.city.name %></span></h5>
+  <h5 class="col-4"><span   >Description:</span></h5>
+  <p class="lead col-12"><%= @event.description%></p>
+  <hr class="my-4">
+  
+</div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'static_pages#index', as: 'home'
+  root 'static_pages#index'
   get 'contact', to: 'static_pages#contact', as: 'contact'
   get 'team', to: 'static_pages#team', as: 'team'
   get 'login', to: 'static_pages#login', as: 'login'
@@ -23,6 +23,5 @@ Rails.application.routes.draw do
   resources :cities, only: [:index, :show]
   resources :sessions, only: [:new, :create, :destroy]
   resources :books 
-  resources :events 
   
 end
