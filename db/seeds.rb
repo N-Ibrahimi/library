@@ -62,7 +62,7 @@ puts '=== Book DB created ==='
 50.times do |l|
 	comment = Comment.create!(
     user_id: User.all.sample.id,
-   # event_id: Event.all.sample.id,
+    event_id: Event.all.sample.id,
     title: Faker::Pokemon.move,
     content: Faker::DumbAndDumber.quote)
 	print '.'
