@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_070913) do
+ActiveRecord::Schema.define(version: 2019_04_17_084312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,9 +69,10 @@ ActiveRecord::Schema.define(version: 2019_04_17_070913) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "creator"
     t.string "like"
+    t.bigint "user_id"
     t.index ["city_id"], name: "index_events_on_city_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "library_lists", force: :cascade do |t|
@@ -150,4 +151,5 @@ ActiveRecord::Schema.define(version: 2019_04_17_070913) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
+  add_foreign_key "events", "users"
 end

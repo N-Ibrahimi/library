@@ -1,0 +1,17 @@
+
+<div class="container">
+<h1 class="text-center mt-10 mb-0 p-3 rounded text-center bg-secondary text-white"> Profile de <%= @user.user_name%></h1>      
+<div class="jumbotron rounded ">
+
+<h5 class="display-8 col-4 " ><span>First name:</span><span class="col-8 text-primary font-italic"><%= @user.first_name%></span></h5>
+<h5 class="display-8 col-4 "><span>Lastname:</span><span class="text-danger font-italic col-8"><%= @user.last_name%></span></h5>
+<h5 class="display-8 col-4 "><span>City:</span><span class="col-8 text-primary font-italic"><%= @user.city.name %></span></h5>
+<h5 class="display-8 col-4 "><span>Date of Birth:</span><span class="text-danger font-italic col-8"><%= @user.birth_date%></span></h5>
+<h5 class="display-8 col-4 "><span>Phone:</span><span class="text-danger font-italic col-8"><%= @user.phone%></span></h5>
+  <h5 class="display-8 col-4 "><span>Email:</span><span class="text-danger font-italic col-8"><%= @user.mail%></span></h5>
+    <h5 class="display-8 col-4 "><span>Address:</span><span class="text-danger font-italic col-8"><%= @user.address%></span></h5>
+     
+
+  <hr class="my-4">
+   <a class=" btn btn-primary btn-lg " href="#" role="button" style="display: inline-block">inscription</a>
+</div>

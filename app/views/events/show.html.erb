@@ -3,9 +3,10 @@
 <h1 class="text-center mt-10 mb-0 p-3 rounded text-center bg-secondary text-white"> Eevent</h1>      
 <div class="jumbotron rounded ">
 
-  <h5 class="display-8 col-4 " ><span>Title:</span><span class="col-8 text-primary font-italic"><%= @event.title%></span></h4>
+  <h5 class="display-8 col-4 " ><span>Title:</span><span class="col-8 text-primary font-italic"><%= @event.title%></span></h5>
   <h5 class="display-8 col-4 "><span>Date:</span><span class="text-danger font-italic col-8"><%= @event.date%></span></h5>
   <h5 class="display-8 col-4 "><span>City: </span><span class="col-8 text-primary font-italic"><%= @event.city.name %></span></h5>
+  <%= link_to "Créateur:#{@user.user_name.capitalize}", user_path(),:class => " btn btn-outline-success" %>
   <h5 class="col-4"><span>Description:</span></h5>
   <p class="lead col-12 text-primary font-italic"><%= @event.description%></p>
   <hr class="my-4">
@@ -17,12 +18,13 @@
 <h4> Commentes</h4>
 <div class="body" style="display:flex-wrap:wrap; width:100%; height:auto">
                 <% @comments.each do |comment| %> 
-                    <div  class="col-2" style="flex-wrap:wrap height:150px; align-self:flex-start;" >
+                    <div  class="col-8" style="flex-wrap:wrap height:150px; align-self:flex-start;" >
                         <div class="card col-md-12 bg-light colo box-shadow border-secondary" style="margin-bottom:3vh; height:120px; display: block;">
                             <div class="card-body">
                                 <h4 class="card-title font-weight-bold playfair-relative"> <%= comment.title.capitalize %></h4>
                                 <div class="row">
                                     <div class="col">
+                                  
                                         <p class="card-text text-success"> <%=comment.user.first_name%>,<%=comment.user.last_name%><span class="card-text text-danger"> <%=comment.created_at %></span></p>
                                        <p class="card-text"> <%=comment.content%></p>
                                     </div>

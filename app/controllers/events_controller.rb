@@ -10,6 +10,8 @@ class EventsController < ApplicationController
         # Déclaration des variables utilisées sur la page.pour voir un evenment
         @event=Event.find_by(id:"#{params[:id]}")
         @comments=Comment.where(event_id:"#{params[:id]}")
+        @user_data=@event.user_id  
+       @user=User.find_by(id:"#{@user_data}")
       
     end
   

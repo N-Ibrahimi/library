@@ -7,5 +7,6 @@ acts_as_voter
   has_many :loans 
   has_many :comments 
   has_many :recomments 
+  has_many :events
   
 end
