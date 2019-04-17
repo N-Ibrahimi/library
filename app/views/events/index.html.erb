@@ -1,13 +1,17 @@
 
 	<div class="container">
-        <h2 class="text-center"> Nos evenments</h2>
-        <h6 class="d-flex justify-content-center">À ce jour il y a<span class="text-danger ml-3 mr-2"><%= Event.all.count %></span>events </h6>      
-        <div class="body" style="display:flex-wrap:wrap; width:100%; height:auto">
+        <div class="card-header col-lg-12 d-flex m-0 p-0 rounded text-center bg-info text-white", width=100%>
+        <h2 class="py-2 text-center"  style="display: inline-block"><span class="text-warning pl-3"><%= Event.all.count%></span> events vous attendent</h2> 
+        <a class="  ml-auto p-1 mt-3 mr-2 btn btn-outline-warning btn-lg " href="<%=new_event_path%>" role="button" style="display: inline-block; height:35px; font-size:15px">Create new event</a>
+        </div>
+
+
+        <div class="body mt-4" style="display:flex-wrap:wrap; width:100%; height:auto">
                 <% @events.each do |event| %> 
                     <div  class="col-12" style="flex-wrap:wrap height:150px; align-self:flex-start;" >
                         <div class="card col-md-12 bg-light colo box-shadow border-secondary" style="margin-bottom:3vh; height:120px; display: block;">
                             <div class="card-body">
-                                <h4 class="card-title font-weight-bold playfair-relative"> <%= event.title.capitalize %> <span class="badge badge-info badgecustom"><%= Comment.where(event: event.id).count %> <span style="font-size: .8em"> 	💬</span></span></h4>
+                                <h5 class="card-title font-weight-bold playfair-relative"> <%= event.title.capitalize %> <span class="badge badge-success"><%= Comment.where(event: event.id).count %> <i class="far fa-comment-dots fa-sm"></i></span></h5>
                                 <div class="row">
                                     <div class="col">
                                         <p class="card-text text-danger"> <%= event.date %></p>

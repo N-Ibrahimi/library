@@ -2,31 +2,36 @@ class EventsController < ApplicationController
     #before_action :authenticate_user, except: [:index]
   
     def index
-         # show all events to public 
          @events=Event.all.order(date: :ASC)
     end
   
     def show  
-        # Déclaration des variables utilisées sur la page.pour voir un evenment
         @event=Event.find_by(id:"#{params[:id]}")
         @comments=Comment.where(event_id:"#{params[:id]}")
         @user_data=@event.user_id  
-       @user=User.find_by(id:"#{@user_data}")
+        @user=User.find_by(id:"#{@user_data}")
+        @present=Attendance.where(event_id: @event)
       
     end
   
     def new
+       # @user_id = current_user.id
+        @event = Event.new
     end
   
-    def create  # Fonction appelée lors de la création d'un gossip.
-    #   @new_gossip = Gossip.new(user_id: current_user.id, title: params['gossip_title'], content: params['gossip_content'])
-  
-    #   if @new_gossip.save
-    #     redirect_to gossips_path
-    #   else
-    #     render new_gossip_path
-    #   end
-    # end
+    def create  
+        @event= Event.new(title: params[:title],
+            description: params[:description],
+            date: params[:date],
+            city_id: params[:city_id],
+            user_id: 2 
+            )
+      if @event.save
+        redirect_to event_path
+      else
+        render new_event_path
+      end
+    end
   
     # def vote
     #   set_gossip
@@ -36,7 +41,6 @@ class EventsController < ApplicationController
     #     @gossip.downvote_from current_user
     #   end
     #   redirect_to request.referrer
-     end
   
     def edit  # Pour custom ton histoire, direction le salon de l'edit. De quoi te rappeler tes week-ends tuning avec Jackie et sa super dedeuch tunée à souhait !
       #set_gossip
