@@ -1,0 +1,59 @@
+                   root GET    /                                                                                        static_pages#index
+                  contact GET    /contact(.:format)                                                                       static_pages#contact
+                     team GET    /team(.:format)                                                                          static_pages#team
+                    login GET    /login(.:format)                                                                         static_pages#login
+                  welcome GET    /welcome/:id(.:format)                                                                   static_pages#welcome
+               user_loans GET    /users/:user_id/loans(.:format)                                                          loans#index
+                          POST   /users/:user_id/loans(.:format)                                                          loans#create
+            new_user_loan GET    /users/:user_id/loans/new(.:format)                                                      loans#new
+           edit_user_loan GET    /users/:user_id/loans/:id/edit(.:format)                                                 loans#edit
+                user_loan GET    /users/:user_id/loans/:id(.:format)                                                      loans#show
+                          PATCH  /users/:user_id/loans/:id(.:format)                                                      loans#update
+                          PUT    /users/:user_id/loans/:id(.:format)                                                      loans#update
+                          DELETE /users/:user_id/loans/:id(.:format)                                                      loans#destroy
+        user_reservations GET    /users/:user_id/reservations(.:format)                                                   reservations#index
+                          POST   /users/:user_id/reservations(.:format)                                                   reservations#create
+     new_user_reservation GET    /users/:user_id/reservations/new(.:format)                                               reservations#new
+    edit_user_reservation GET    /users/:user_id/reservations/:id/edit(.:format)                                          reservations#edit
+         user_reservation GET    /users/:user_id/reservations/:id(.:format)                                               reservations#show
+                          PATCH  /users/:user_id/reservations/:id(.:format)                                               reservations#update
+                          PUT    /users/:user_id/reservations/:id(.:format)                                               reservations#update
+                          DELETE /users/:user_id/reservations/:id(.:format)                                               reservations#destroy
+                    users GET    /users(.:format)                                                                         users#index
+                          POST   /users(.:format)                                                                         users#create
+                 new_user GET    /users/new(.:format)                                                                     users#new
+                edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                     user GET    /users/:id(.:format)                                                                     users#show
+                          PATCH  /users/:id(.:format)                                                                     users#update
+                          PUT    /users/:id(.:format)                                                                     users#update
+                          DELETE /users/:id(.:format)                                                                     users#destroy
+           event_comments GET    /events/:event_id/comments(.:format)                                                     comments#index
+                          POST   /events/:event_id/comments(.:format)                                                     comments#create
+        new_event_comment GET    /events/:event_id/comments/new(.:format)                                                 comments#new
+       edit_event_comment GET    /events/:event_id/comments/:id/edit(.:format)                                            comments#edit
+            event_comment GET    /events/:event_id/comments/:id(.:format)                                                 comments#show
+                          PATCH  /events/:event_id/comments/:id(.:format)                                                 comments#update
+                          PUT    /events/:event_id/comments/:id(.:format)                                                 comments#update
+                          DELETE /events/:event_id/comments/:id(.:format)                                                 comments#destroy
+                   events GET    /events(.:format)                                                                        events#index
+                          POST   /events(.:format)                                                                        events#create
+                new_event GET    /events/new(.:format)                                                                    events#new
+               edit_event GET    /events/:id/edit(.:format)                                                               events#edit
+                    event GET    /events/:id(.:format)                                                                    events#show
+                          PATCH  /events/:id(.:format)                                                                    events#update
+                          PUT    /events/:id(.:format)                                                                    events#update
+                          DELETE /events/:id(.:format)                                                                    events#destroy
+                   cities GET    /cities(.:format)                                                                        cities#index
+                     city GET    /cities/:id(.:format)                                                                    cities#show
+                 sessions POST   /sessions(.:format)                                                                      sessions#create
+              new_session GET    /sessions/new(.:format)                                                                  sessions#new
+                  session DELETE /sessions/:id(.:format)                                                                  sessions#destroy
+                    books GET    /books(.:format)                                                                         books#index
+                          POST   /books(.:format)                                                                         books#create
+                 new_book GET    /books/new(.:format)                                                                     books#new
+                edit_book GET    /books/:id/edit(.:format)                                                                books#edit
+                     book GET    /books/:id(.:format)                                                                     books#show
+                          PATCH  /books/:id(.:format)                                                                     books#update
+                          PUT    /books/:id(.:format)                                                                     books#update
+                          DELETE /books/:id(.:format)                                                                     books#destroy
+

@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
     belongs_to :user 
     belongs_to :event 
 
-    has_many :racomments
+    has_many :recomments
 
 end

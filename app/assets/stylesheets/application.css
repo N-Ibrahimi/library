@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
-nav {
-    position: sticky;
-}
  
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
@@ -32,3 +29,7 @@ h1 {
   font-weight: bolder;
   text-shadow: 1px 2px 4px rgb(146,216,58);
   }
+.container {
+    position: relative;
+    margin-top: 80px;
+}

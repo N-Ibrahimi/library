@@ -6,22 +6,11 @@ class EventsController < ApplicationController
          @events=Event.all.order(date: :ASC)
     end
   
-    def show  # Déclaration des variables utilisées sur la page. Et oui ça en fait un paquet !!!
-    #   set_gossip
-    @event=Event.find_by(id:"#{params[:id]}")
-    # @event_title=@event.title 
-    # @event_date= @event.date
-    # @event_description= @event.description
-
-    #   @gossip_id = params[:id]
-    #   @gossip_user_username = Gossip.find(params[:id]).user.username
-    #   @gossip_user_id = Gossip.find(params[:id]).user.id
-    #   @gossip_user_city_name = Gossip.find(params[:id]).user.city.name
-    #   @gossip_user_city_id = Gossip.find(params[:id]).user.city_id
-    #   @gossip_title = Gossip.find(params[:id]).title
-    #   @gossip_content = Gossip.find(params[:id]).content
-    #   @gossip_created_at = Gossip.find(params[:id]).created_at
-    #   @gossip_comments = Gossip.find(params[:id]).comments
+    def show  
+        # Déclaration des variables utilisées sur la page.pour voir un evenment
+        @event=Event.find_by(id:"#{params[:id]}")
+        @comments=Comment.where(event_id:"#{params[:id]}")
+      
     end
   
     def new

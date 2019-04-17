@@ -5,7 +5,7 @@
         <div class="body" style="display:flex-wrap:wrap; width:100%; height:auto">
                 <% @events.each do |event| %> 
                     <div  class="col-12" style="flex-wrap:wrap height:150px; align-self:flex-start;" >
-                        <div class="card col-md-12 bg-light colo border-info box-shadow border border-danger" style="margin-bottom:3vh; height:120px; display: block;">
+                        <div class="card col-md-12 bg-light colo box-shadow border-secondary" style="margin-bottom:3vh; height:120px; display: block;">
                             <div class="card-body">
                                 <h4 class="card-title font-weight-bold playfair-relative"> <%= event.title.capitalize %> <span class="badge badge-info badgecustom"><%= Comment.where(event: event.id).count %> <span style="font-size: .8em"> 	💬</span></span></h4>
                                 <div class="row">

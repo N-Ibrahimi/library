@@ -9,12 +9,10 @@ Rails.application.routes.draw do
 
 
   resources :users do
+    resources :loans
     resources :reservations
   end
 
-  resources :users do
-    resources :loans 
-  end
 
   resources :events do
     resources :comments
